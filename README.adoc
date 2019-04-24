@@ -1,4 +1,4 @@
-STEP TO BUILD & RUN IN MINICUBE
+STEP TO BUILD & RUN IN MINIKUBE
 
 ----------------------------------------------
 Building the image and running the container

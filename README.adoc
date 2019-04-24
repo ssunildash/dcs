@@ -1,0 +1,48 @@
+STEP to RUN in MINICUBE
+
+----------------------------------------------
+Building the image and running the container
+----------------------------------------------
+minikube start
+
+minikube docker-env
+
+minikube docker-env | Invoke-Expression
+
+docker build -t dcs:v0 .
+
+---------------------------------------------
+Running the app from a container
+---------------------------------------------
+
+kubectl run dcs-sample --image=dcs:v0 --port=8500
+
+kubectl get pods
+
+---------------------------------------------
+let’s expose it to external traffic
+---------------------------------------------
+
+kubectl expose deployment hello-universe --type="LoadBalancer"
+
+kubectl get services
+
+we get the generated URL
+
+minikube service dcs-sample --url
+
+---------------------------------------------
+Kubernetes dashboard and scaling
+---------------------------------------------
+
+minikube dashboard
+
+let’s scale our dummy app in 3 replica sets:
+
+kubectl scale deployment hello-universe --replicas=3
+
+--------------------------------------------
+SWagger
+--------------------------------------------
+
+{URL}/swagger-ui.html
